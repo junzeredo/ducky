@@ -1,0 +1,43 @@
+
+#birdie {
+transform: scale(0.6);
+right: 0;
+bottom: 0;
+position: relative;
+}
+
+@keyframes bobbing {
+  0%{transform: rotate(-5deg)translateY(20px)}
+  50%{transform: rotate(2deg) translateX(20px) translateY(13px)}
+  100%{transform: rotate(-5deg)translateY(20px)}
+}
+
+@keyframes flapping {
+  0%{transform: rotate(-15deg)translateX(-95px) translateY(-13px)}
+  50%{transform: rotate(2deg) translateX(-5px) translateY(13px)}
+  100%{transform: rotate(-15deg) translateX(-95px) translateY(-13px)}
+}
+
+@keyframes kick {
+  0%{transform: rotate(-25deg) translateY(20px)}
+  50%{transform: rotate(0deg)}
+  100%{transform: rotate(-25deg) translateY(20px)}
+}
+
+
+.body-rotation {
+  transform-origin: center;
+  animation-name: bobbing;
+  animation-duration: 2s;
+  animation-iteration-count: infinite
+}
+
+#bird-wing{
+  transform-origin: top;
+  animation: bobbing 2s infinite, flapping 2s infinite;
+}
+
+#bird-backleg{
+  transform-origin: center;
+  animation: kick 2s infinite;
+}
